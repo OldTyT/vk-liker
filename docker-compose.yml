@@ -1,0 +1,11 @@
+---
+version: "3.9"
+services:
+  vk-to-tg:
+    restart: always
+    image: ghcr.io/oldtyt/vklike
+    environment:
+      VK_TOKENS: $VK_TOKENS
+      WALL_CNT: 20
+      TIME_SLEEP: 300
+      GROUP_ID: -1
