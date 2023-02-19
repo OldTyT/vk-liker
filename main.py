@@ -64,6 +64,7 @@ def get_latest_posts_from_group(access_token: str) -> dict:
 
 def like(accounts: dict):
     for i in accounts:
+        print(f"Use account - {i[:5]}...{i[-3:]}")
         if "access_token" in accounts[i].keys():
             if accounts[i]['access_token'] != '':
                 last_posts = get_latest_posts_from_group(accounts[i]['access_token'])
@@ -115,4 +116,5 @@ def like_post(last_posts: dict, accounts: dict, i):
 if __name__ == '__main__':
     while True:
         load_accounts()
+        print(f"Sleep - {TIME_SLEEP}s.")
         time.sleep(TIME_SLEEP)
