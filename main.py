@@ -40,7 +40,6 @@ def load_accounts():
                                  "password": f"SOME_PASSWORD{str(random.randint(0, 100))}",
                                  "access_token": VK_TOKEN}})
         count += 1
-    print(accounts)
     like(accounts)
 
 
@@ -65,9 +64,8 @@ def get_latest_posts_from_group(access_token: str) -> dict:
 
 def like(accounts: dict):
     for i in accounts:
-        print(i)
-        print(f"Use account - {i[:5]}...{i[-3:]}")
         if "access_token" in accounts[i].keys():
+            print(f"Use account - {accounts[i]['access_token'][:5]}...{accounts[i]['access_token'][-3:]}")
             if accounts[i]['access_token'] != '':
                 last_posts = get_latest_posts_from_group(accounts[i]['access_token'])
                 if "error" in last_posts:
