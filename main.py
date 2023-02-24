@@ -64,6 +64,7 @@ def get_latest_posts_from_group(access_token: str) -> dict:
 
 def like(accounts: dict):
     for i in accounts:
+        print(i)
         print(f"Use account - {i[:5]}...{i[-3:]}")
         if "access_token" in accounts[i].keys():
             if accounts[i]['access_token'] != '':
