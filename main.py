@@ -40,6 +40,7 @@ def load_accounts():
                                  "password": f"SOME_PASSWORD{str(random.randint(0, 100))}",
                                  "access_token": VK_TOKEN}})
         count += 1
+    print(accounts)
     like(accounts)
 
 
